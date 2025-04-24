@@ -1,0 +1,10 @@
+BL_Beacon
+BL_Beacon
+Microwave_Oven
+Microwave_Oven
+BL_Beacon
+BL_Beacon
+BL_Beacon
+WiFi_Beacon
+BL_Beacon
+Microwave_Oven

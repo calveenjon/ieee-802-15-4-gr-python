@@ -1,0 +1,5 @@
+Dataset name: ['rf_features_dataset_16.csv', 'rf_features_dataset_32.csv', 'rf_features_dataset_64.csv', 'rf_features_dataset_128.csv', 'rf_features_dataset_256.csv', 'rf_features_dataset_512.csv', 'rf_features_dataset_1024.csv', 'rf_features_dataset_2048.csv', 'rf_features_dataset_4096.csv']
+Best model accuracy: [0.4567901234567901, 0.7745098039215687, 0.9647058823529412, 0.921875, 0.9761904761904762, 0.9615384615384616, 1.0, 0.3333333333333333, 0.6666666666666666]
+Model size (bytes): [1798, 8060, 3164, 3164, 2892, 2620, 2620, 2348, 2340]
+Dataset mean: [216.11111111 165.44444444  54.25868501   0.48933919]
+Dataset std: [231.22208874 213.56711727  66.56320729   0.38408544]

@@ -1,0 +1,10 @@
+tx_period_max,tx_period_min,cl_period_max,duty_cycle,rf_label
+483.0,1.0,167.0,0.799072265625,Microwave_Oven
+18.0,1.0,461.0,0.0341796875,BL_Beacon
+472.0,1.0,171.0,0.811767578125,Microwave_Oven
+2.0,1.0,30.0,0.10791015625,WiFi_Beacon
+518.0,1.0,1.0,0.992431640625,WiFi_Stream
+16.0,1.0,621.0,0.026123046875,BL_Beacon
+8.0,1.0,18.0,0.323486328125,BL_Stream
+420.0,1.0,2.0,0.990234375,WiFi_Stream
+8.0,1.0,18.0,0.31884765625,BL_Stream

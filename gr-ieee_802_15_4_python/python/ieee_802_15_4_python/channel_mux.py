@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Copyright 2024 Calveen Jon Elvin.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+
+
+import numpy as np
+from gnuradio import gr
+import pmt
+
+class channel_mux(gr.basic_block):
+    """
+    docstring for block channel_mux
+    """
+    def __init__(self):
+        gr.basic_block.__init__(self,
+            name="channel_mux",
+            in_sig=[np.complex64, np.complex64],
+            out_sig=[np.complex64])
+
+        self.message_port_register_in(pmt.intern('chan'))
+        self.set_msg_handler(pmt.intern('chan'), self.handle_chan_msg)
+        
+        self.chan_num = 0
+
+    def forecast(self, noutput_items, ninputs):
+        ninput_items_required = [noutput_items] * ninputs
+        return ninput_items_required
+
+
+    def general_work(self, input_items, output_items):
+        # For this sample code, the general block is made to behave like a sync block
+        # ninput_items = min([len(items) for items in input_items])
+        # noutput_items = min(len(output_items[0]), ninput_items)
+        # output_items[0][:noutput_items] = input_items[0][:noutput_items]
+
+        ninput_items = len(input_items[self.chan_num])
+        noutput_items = min(len(output_items[0]), ninput_items)
+        output_items[0][:noutput_items] = input_items[self.chan_num][:noutput_items]
+        # print("[TX_CMD] Input item size: {}".format(ninput_items))
+        # print("[TX_CMD] Selected channel: {}".format(self.chan_num))
+
+        self.consume_each(noutput_items)
+        return noutput_items
+    
+
+    def handle_chan_msg(self, msg):
+        data = pmt.to_python(msg)[1]
+        # print("[TX_CMD] Received message data: {}".format(data))
+        self.chan_num = data['chan']
+
